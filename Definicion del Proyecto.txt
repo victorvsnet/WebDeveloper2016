@@ -1,0 +1,27 @@
+........................................................................................
+:: CUMPLEAÑOS
+........................................................................................
+:: Definicion: El sistema debe soportar saludos para los compleañeros desde una pagina,
+donde se mostrara el usuario(cumpleañero) y los saludos de otros usuarios, los cuales le dejaran 
+saludos en su muro principal, el cumpleañero podra responder en su mismo muro.
+----------------------------------------------------------------------------------------
+- Login
+- Registro de Usuarios
+	- Registro
+	- Actualizacion
+	- Consulta
+	- Eliminar (dar de baja a un usuario cesado en la compañia)
+- Registro de Saludos
+	- Nuevo
+	- Consulta (donde se mostraran los mensajes para cada usuario de los otros usuarios)
+	- Eliminar
+- Notificaciones al correo de Saludos (Cuando recibe saludos de otro usuario)
+	- envio de correo
+- Notificacion de Feliz cumpleaños (Automaticas por cumpleaños de cada usuario)
+	- envio de correo
+- Registro de Organizadores
+	- Registro
+	- Modificacion
+	- Consulta
+	- Eliminar
+	- envio de notificacion para los organizadores
