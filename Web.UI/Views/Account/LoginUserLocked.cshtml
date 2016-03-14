@@ -1,0 +1,84 @@
+﻿@using Microsoft.AspNet.Identity
+@using Web.UI.Models
+@model LoginViewModel
+@{
+    ViewBag.Title = "Birthday | Bloqueo";
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Birthday | Bloqueo</title>
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <!-- Bootstrap 3.3.5 -->
+    <link rel="stylesheet" href="~/Content/bootstrap.min.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <!-- Ionicons -->
+    <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="~/Content/Estilos/dist/css/AdminLTE.min.css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body class="hold-transition lockscreen">
+    <!-- Automatic element centering -->
+    <div class="lockscreen-wrapper">
+        <div class="lockscreen-logo">
+            <a href="login.html"><span class="fa fa-birthday-cake margin-r-5"></span><b>Birthday</b>IS</a>
+        </div>
+@using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post))
+            {
+        <!-- User name -->
+        <div class="lockscreen-name">@User.Identity.GetUserName()<!--User.Identity.GetUserName()-Victor Yucra--></div>
+
+        <!-- START LOCK SCREEN ITEM -->
+        <div class="lockscreen-item">
+            <!-- lockscreen image -->
+            <div class="lockscreen-image">
+                <img src="~/Content/Estilos/dist/img/avatarvya.png" alt="User Image">
+            </div>
+            <!-- /.lockscreen-image -->
+            <!-- lockscreen credentials (contains the form) -->
+            
+                <div class="lockscreen-credentials">
+                    <div class="input-group">
+                        @Html.PasswordFor(m => m.Password, new { @class = "form-control", placeholder = "password" })
+                        <!--<input type="password" class="form-control" placeholder="password">-->
+                        <div class="input-group-btn">
+                            <button type="submit" class="btn"><i class="fa fa-arrow-right text-muted"></i></button>
+                        </div>
+
+                    </div>
+                </div><!-- /.lockscreen credentials -->
+        </div><!-- /.lockscreen-item -->
+
+    @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
+}
+
+        <div class="help-block text-center">
+            Introduzca su contrase&ntilde;a para recuperar su sesi&oacute;n
+        </div>
+        <div class="text-center">
+            <a href="login.html">O inicia sesi&oacute;n como un usuario diferente</a>
+        </div>
+        <div class="lockscreen-footer text-center">
+            Copyright &copy; @DateTime.Now.Year <b><a href="#" class="text-black">Interseguro</a></b><br>
+            Todos los derechos reservados.
+        </div>
+    </div><!-- /.center -->
+    <!-- jQuery 2.1.4 -->
+    <script src="~/Content/Estilos/plugins/jQuery/jQuery-2.1.4.min.js"></script>
+    <!-- Bootstrap 3.3.5 -->
+    <script src="~/Scripts/bootstrap.min.js"></script>
+</body>
+</html>
