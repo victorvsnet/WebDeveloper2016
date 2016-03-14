@@ -13,7 +13,7 @@ namespace Birth.DataAccess
     {
 
         /// <summary>
-        /// Lista empresas registradas.
+        /// Lista Areas en el aplicativo registradas
         /// </summary>
         /// <returns></returns>
         public List<BEArea> ListarArea()

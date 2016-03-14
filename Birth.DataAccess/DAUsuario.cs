@@ -16,7 +16,7 @@ namespace Birth.DataAccess
         /// Selecciona usuarios de la tabla Perfil.Usuario
         /// </summary>
         /// <returns></returns>
-        public List<BEUsuario> ListarCategoriaUsuario()
+        public List<BEUsuario> ListarUsuario()
         {
             List<BEUsuario> Lista = new List<BEUsuario>();
             BEUsuario item;
@@ -87,7 +87,7 @@ namespace Birth.DataAccess
         /// <summary>
         /// Insertar Datos de Usuario
         /// </summary>
-        /// <param name="parametro">Dtaos del Usuario (Objeto BEUsuario)</param>
+        /// <param name="parametro">Datos del Usuario (Objeto BEUsuario)</param>
         /// <returns>Estado de la Grabacion</returns>
         public bool InsertUsuario(BEUsuario parametro)
         {
