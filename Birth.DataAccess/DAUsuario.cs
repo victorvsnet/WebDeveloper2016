@@ -102,6 +102,7 @@ namespace Birth.DataAccess
                     cmd.Parameters.Add("@gls_ape_materno", SqlDbType.VarChar).Value = parametro.gls_ape_materno;
                     cmd.Parameters.Add("@anexo", SqlDbType.VarChar).Value = parametro.anexo;
                     cmd.Parameters.Add("@gls_usuario", SqlDbType.VarChar).Value = parametro.gls_usuario;
+                    cmd.Parameters.Add("@correo", SqlDbType.VarChar).Value = parametro.correo;
                     cmd.Parameters.Add("@idcargo", SqlDbType.VarChar).Value = parametro.idcargo;
                     cmd.Parameters.Add("@idarea", SqlDbType.Int).Value = parametro.idarea;
                     cmd.Parameters.Add("@idempresa", SqlDbType.Int).Value = parametro.idempresa;
@@ -110,7 +111,9 @@ namespace Birth.DataAccess
                     cmd.Parameters.Add("@estado", SqlDbType.Int).Value = parametro.estado;
                     cmd.Parameters.Add("@aud_usr_ingreso", SqlDbType.VarChar).Value = parametro.aud_usr_ingreso;
 
-                    con.Open();
+                    if (con.State == ConnectionState.Closed)
+                        con.Open();
+
                     cmd.ExecuteNonQuery();
                     estado = true;
                 }

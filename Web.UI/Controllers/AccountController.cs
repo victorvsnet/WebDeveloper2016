@@ -9,6 +9,8 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using Web.UI.Models;
+using Birth.BusinessEntity;
+using Birth.BusinessLogic;
 
 namespace Web.UI.Controllers
 {
@@ -166,6 +168,15 @@ namespace Web.UI.Controllers
                 if (result.Succeeded)
                 {
                     await SignInManager.SignInAsync(user, isPersistent:false, rememberBrowser:false);
+
+                    // Generar el registro de la informacion del usuario
+                    BLUsuario UsuarioLogic = new BLUsuario();
+                    BEUsuario UsuarioParam = new BEUsuario();
+                    UsuarioParam.guid_user = user.Id;
+                    UsuarioParam.correo = model.Email;
+                    UsuarioParam.estado = "1";
+
+                    bool registro = UsuarioLogic.InsertUsuario(UsuarioParam);
 
                     // Para obtener más información sobre cómo habilitar la confirmación de cuenta y el restablecimiento de contraseña, visite http://go.microsoft.com/fwlink/?LinkID=320771
                     // Enviar correo electrónico con este vínculo

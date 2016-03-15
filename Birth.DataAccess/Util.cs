@@ -2,7 +2,7 @@
 
 namespace Birth.DataAccess
 {
-    static class Util
+    public static class Util
     {
         /// <summary>
         /// Obtiene la cadena de conexión configurada en el Web.Config
@@ -10,7 +10,7 @@ namespace Birth.DataAccess
         /// <returns>Cadena de conexión</returns>
         public static string getConnection()
         {
-            return ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString;
+            return ConfigurationManager.ConnectionStrings["DBBIRTHDAY"].ConnectionString;
         }
     }
 }

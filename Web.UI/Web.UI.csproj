@@ -1190,6 +1190,16 @@
     <None Include="Project_Readme.html" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Birth.BusinessEntity\Birth.BusinessEntity.csproj">
+      <Project>{3e34cd94-4a5d-4335-8e4d-a24d06a15ca5}</Project>
+      <Name>Birth.BusinessEntity</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Birth.BusinessLogic\Birth.BusinessLogic.csproj">
+      <Project>{095b2c19-7eda-4809-800c-8614dc7c4556}</Project>
+      <Name>Birth.BusinessLogic</Name>
+    </ProjectReference>
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
