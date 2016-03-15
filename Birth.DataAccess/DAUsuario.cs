@@ -91,35 +91,55 @@ namespace Birth.DataAccess
         /// <returns>Estado de la Grabacion</returns>
         public bool InsertUsuario(BEUsuario parametro)
         {
-            bool estado = false;
-            using (SqlConnection con = new SqlConnection(Util.getConnection()))
+            try
             {
-                using (SqlCommand cmd = new SqlCommand("Perfil.SP_Insert_Usuario", con))
+                bool estado = false;
+                using (SqlConnection con = new SqlConnection(Util.getConnection()))
                 {
-                    cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.Add("@gls_nombre", SqlDbType.VarChar).Value = parametro.gls_nombre;
-                    cmd.Parameters.Add("@gls_ape_paterno", SqlDbType.VarChar).Value = parametro.gls_ape_paterno;
-                    cmd.Parameters.Add("@gls_ape_materno", SqlDbType.VarChar).Value = parametro.gls_ape_materno;
-                    cmd.Parameters.Add("@anexo", SqlDbType.VarChar).Value = parametro.anexo;
-                    cmd.Parameters.Add("@gls_usuario", SqlDbType.VarChar).Value = parametro.gls_usuario;
-                    cmd.Parameters.Add("@correo", SqlDbType.VarChar).Value = parametro.correo;
-                    cmd.Parameters.Add("@idcargo", SqlDbType.VarChar).Value = parametro.idcargo;
-                    cmd.Parameters.Add("@idarea", SqlDbType.Int).Value = parametro.idarea;
-                    cmd.Parameters.Add("@idempresa", SqlDbType.Int).Value = parametro.idempresa;
-                    cmd.Parameters.Add("@idcategoria", SqlDbType.Int).Value = parametro.idcategoria;
-                    cmd.Parameters.Add("@guid_user", SqlDbType.Int).Value = parametro.guid_user;
-                    cmd.Parameters.Add("@estado", SqlDbType.Int).Value = parametro.estado;
-                    cmd.Parameters.Add("@aud_usr_ingreso", SqlDbType.VarChar).Value = parametro.aud_usr_ingreso;
+                    using (SqlCommand cmd = new SqlCommand("Perfil.SP_Insert_Usuario", con))
+                    {
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.Add("@gls_nombre", SqlDbType.VarChar).Value = parametro.gls_nombre;
+                        cmd.Parameters.Add("@gls_ape_paterno", SqlDbType.VarChar).Value = parametro.gls_ape_paterno;
+                        cmd.Parameters.Add("@gls_ape_materno", SqlDbType.VarChar).Value = parametro.gls_ape_materno;
 
-                    if (con.State == ConnectionState.Closed)
-                        con.Open();
+                        if (parametro.anexo != null)
+                            cmd.Parameters.Add("@anexo", SqlDbType.Int).Value = parametro.anexo.Value;
 
-                    cmd.ExecuteNonQuery();
-                    estado = true;
+                        cmd.Parameters.Add("@gls_usuario", SqlDbType.VarChar).Value = parametro.gls_usuario;
+                        cmd.Parameters.Add("@correo", SqlDbType.VarChar).Value = parametro.correo;
+
+                        if (parametro.idcargo != null)
+                            cmd.Parameters.Add("@idcargo", SqlDbType.Int).Value = parametro.idcargo.Value;
+
+                        if (parametro.idarea != null)
+                            cmd.Parameters.Add("@idarea", SqlDbType.Int).Value = parametro.idarea.Value;
+
+                        if (parametro.idempresa != null)
+                            cmd.Parameters.Add("@idempresa", SqlDbType.Int).Value = parametro.idempresa.Value;
+
+                        if (parametro.idcategoria != null)
+                            cmd.Parameters.Add("@idcategoria", SqlDbType.Int).Value = parametro.idcategoria.Value;
+
+                        cmd.Parameters.Add("@guid_user", SqlDbType.VarChar).Value = parametro.guid_user;
+                        cmd.Parameters.Add("@estado", SqlDbType.Char).Value = parametro.estado;
+                        cmd.Parameters.Add("@aud_usr_ingreso", SqlDbType.VarChar).Value = parametro.aud_usr_ingreso;
+
+                        if (con.State == ConnectionState.Closed)
+                            con.Open();
+
+                        cmd.ExecuteNonQuery();
+                        estado = true;
+                    }
+                    con.Close();
                 }
-                con.Close();
+                return estado;
             }
-            return estado;
+            catch (Exception ex)
+            {
+                throw new Exception("Hubo un error: ", ex);
+            }
+
         }
 
     }

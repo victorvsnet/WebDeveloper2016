@@ -174,6 +174,7 @@ namespace Web.UI.Controllers
                     BEUsuario UsuarioParam = new BEUsuario();
                     UsuarioParam.guid_user = user.Id;
                     UsuarioParam.correo = model.Email;
+                    UsuarioParam.idcategoria = 2;
                     UsuarioParam.estado = "1";
 
                     bool registro = UsuarioLogic.InsertUsuario(UsuarioParam);

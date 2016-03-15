@@ -12,12 +12,12 @@ namespace Birth.BusinessEntity
         public string gls_ape_paterno { get; set; }
         public string gls_ape_materno { get; set; }
         public string correo { get; set; }
-        public int anexo { get; set; }
+        public int? anexo { get; set; }
         public string gls_usuario { get; set; }
-        public int idcargo { get; set; }
-        public int idarea { get; set; }
-        public int idempresa { get; set; }
-        public int idcategoria { get; set; }
+        public int? idcargo { get; set; }
+        public int? idarea { get; set; }
+        public int? idempresa { get; set; }
+        public int? idcategoria { get; set; }
         public string guid_user { get; set; }
     }
 }
