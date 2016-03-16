@@ -4,72 +4,99 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<div class="box box-default">
+    <div class="box-body">
+        <div class="row">
+            <div class="col-md-6">
+                <!--<div class="">-->
+                <!--<div class="box-body">-->
+
+                @using (Html.BeginForm(new { @class = "box box-info" }))
+                {
+                    @Html.AntiForgeryToken()
+
+                    <div class="box-body">
+                        <h4>Mis Datos</h4>
+                        <hr />
+                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+                        <!-- Nombre de Usuario / Username -->
+                        <div class="form-group">
+                            <div class="input-group">
+                                <div class="input-group-addon">
+                                    <i class="fa fa-user"></i>
+                                </div>
+                                @Html.EditorFor(model => model.nom_usuario, new { htmlAttributes = new { @class = "form-control", placeholder = "Nombre de Usuario" } })
+                            </div><!-- /.input group -->
+                            @Html.ValidationMessageFor(model => model.nom_usuario, "", new { @class = "control-label text-danger" })
+                        </div><!-- /.form group -->
+
+                        <!-- Correo electronico -->
+                        <div class="form-group">
+                            <div class="input-group">
+                                <div class="input-group-addon">
+                                    <i class="fa fa-at"></i>
+                                </div>
+                                @Html.EditorFor(model => model.correo, new { htmlAttributes = new { @class = "form-control", placeholder = "Correo electronico" } })
+                                @Html.ValidationMessageFor(model => model.correo, "", new { @class = "text-danger" })
+                            </div><!-- /.input group -->
+                        </div><!-- /.form group -->
+
+                        <!-- Nombre -->
+                        <div class="form-group">
+                            <div class="input-group">
+                                <div class="input-group-addon">
+                                    <i class="fa fa-pencil-square-o"></i>
+                                </div>
+                                @Html.EditorFor(model => model.nombre, new { htmlAttributes = new { @class = "form-control", placeholder = "Nombres" } })
+                                @Html.ValidationMessageFor(model => model.nombre, "", new { @class = "text-danger" })
+                            </div><!-- /.input group -->
+                        </div><!-- /.form group -->
+                        <!-- Apellido Paterno -->
+                        <div class="form-group">
+                            <div class="input-group">
+                                <div class="input-group-addon">
+                                    <i class="fa fa-pencil-square-o"></i>
+                                </div>
+                                @Html.EditorFor(model => model.ape_paterno, new { htmlAttributes = new { @class = "form-control", placeholder = "Apellido Paterno" } })
+                                @Html.ValidationMessageFor(model => model.ape_paterno, "", new { @class = "text-danger" })
+                            </div><!-- /.input group -->
+                        </div><!-- /.form group -->
+                        <!-- Apellido Materno -->
+                        <div class="form-group">
+                            <div class="input-group">
+                                <div class="input-group-addon">
+                                    <i class="fa fa-pencil-square-o"></i>
+                                </div>
+                                @Html.EditorFor(model => model.ape_materno, new { htmlAttributes = new { @class = "form-control", placeholder = "Apellido Materno" } })
+                                @Html.ValidationMessageFor(model => model.ape_materno, "", new { @class = "text-danger" })
+                            </div><!-- /.input group -->
+                        </div><!-- /.form group -->
+                        <!-- Apellido Materno -->
+                        <div class="form-group">
+                            <div class="input-group">
+                                <div class="input-group-addon">
+                                    <i class="fa fa-phone-square"></i>
+                                </div>
+                                @Html.EditorFor(model => model.anexo, new { htmlAttributes = new { @class = "form-control", placeholder = "Anexo" } })
+                                @Html.ValidationMessageFor(model => model.anexo, "", new { @class = "text-danger" })
+                            </div><!-- /.input group -->
+                        </div><!-- /.form group -->
+
+                    </div><!-- /.box-body -->
+                    <div class="box-footer">
+                        <input type="submit" value="Guardar" class="btn btn-primary" />
+                    </div>
 
 
-@using (Html.BeginForm())
-{
-    @Html.AntiForgeryToken()
-    
-    <div class="form-horizontal">
-        <h4>UsuarioViewModels</h4>
-        <hr />
-        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        <div class="form-group">
-            @Html.LabelFor(model => model.nombre, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.nombre, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.nombre, "", new { @class = "text-danger" })
-            </div>
-        </div>
+                }
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.ape_paterno, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.ape_paterno, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.ape_paterno, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.ape_materno, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.ape_materno, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.ape_materno, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.anexo, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.anexo, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.anexo, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.nom_usuario, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.nom_usuario, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.nom_usuario, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.correo, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.correo, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.correo, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Save" class="btn btn-default" />
+                <!--</div>-->
+                <!--</div>-->
             </div>
         </div>
     </div>
-}
+</div>
 
 <div>
     @Html.ActionLink("Back to List", "Index")
