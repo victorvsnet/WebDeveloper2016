@@ -73,7 +73,7 @@
                             </div><!-- /.input group -->
                         </div><!-- /.form group -->
 
-                        <!-- Apellido Materno -->
+                        <!-- Numero de Anexo -->
                         <div class="form-group">
                             <div class="input-group">
                                 <div class="input-group-addon">
@@ -83,6 +83,27 @@
                                 @Html.ValidationMessageFor(model => model.anexo, "", new { @class = "text-danger" })
                             </div><!-- /.input group -->
                         </div><!-- /.form group -->
+
+                        <!-- Cargo del Usuario -->
+                        <div class="form-group">
+                            <div class="input-group">
+                                <div class="input-group-addon">
+                                    <i class="fa fa-sitemap"></i>
+                                </div>
+                                @Html.DropDownListFor(model => model.idcargo, new SelectList(Model.ListaCargos, "Id", "gls_Cargo"), "Cargo del Usuario", new { @class = "form-control select2" })
+                            </div><!-- /.input group -->
+                        </div><!-- /.form-group -->
+
+                        <!-- Area de Usuario -->
+                        <div class="form-group">
+                            <div class="input-group">
+                                <div class="input-group-addon">
+                                    <i class="fa fa-sitemap"></i>
+                                </div>
+                                @Html.DropDownListFor(model => model.idarea, new SelectList(Model.ListaAreas, "Id", "gls_area"), "Area del Usuario", new { @class = "form-control select2" })
+                            </div><!-- /.input group -->
+                        </div><!-- /.form-group -->
+
 
                     </div><!-- /.box-body -->
                     <div class="box-footer">

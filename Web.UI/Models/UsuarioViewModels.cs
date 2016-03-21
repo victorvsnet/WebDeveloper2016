@@ -39,6 +39,9 @@ namespace Web.UI.Models
         [Display(Name = "Empresa")]
         public List<Empresa> ListaEmpresas { get; set; }
 
+        public int idcargo { get; set; }
+        public int idarea { get; set; }
+
         public UsuarioViewModels()
         {
             ListaCargos = new List<Cargo>();

@@ -142,5 +142,52 @@ namespace Birth.DataAccess
 
         }
 
+        /// <summary>
+        /// Actualiza informacion del usuario
+        /// </summary>
+        /// <param name="parametro">Datos del Usuario (Objeto BEUsuario)</param>
+        /// <returns>Estado de la Actualización</returns>
+        public bool ActualizarUsuario(BEUsuario parametro)
+        {
+            try
+            {
+                bool estado = false;
+                using (SqlConnection con = new SqlConnection(Util.getConnection()))
+                {
+                    using (SqlCommand cmd = new SqlCommand("Perfil.SP_Update_Usuario", con))
+                    {
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.Add("@gls_nombre", SqlDbType.VarChar).Value = parametro.gls_nombre;
+                        cmd.Parameters.Add("@gls_ape_paterno", SqlDbType.VarChar).Value = parametro.gls_ape_paterno;
+                        cmd.Parameters.Add("@gls_ape_materno", SqlDbType.VarChar).Value = parametro.gls_ape_materno;
+
+                        if (parametro.anexo != null)
+                            cmd.Parameters.Add("@anexo", SqlDbType.Int).Value = parametro.anexo.Value;
+
+                        cmd.Parameters.Add("@gls_usuario", SqlDbType.VarChar).Value = parametro.gls_usuario;
+                        cmd.Parameters.Add("@correo", SqlDbType.VarChar).Value = parametro.correo;
+
+                        if (parametro.idcargo != null)
+                            cmd.Parameters.Add("@idcargo", SqlDbType.Int).Value = parametro.idcargo.Value;
+
+                        if (parametro.idarea != null)
+                            cmd.Parameters.Add("@idarea", SqlDbType.Int).Value = parametro.idarea.Value;
+                        
+                        if (con.State == ConnectionState.Closed)
+                            con.Open();
+
+                        cmd.ExecuteNonQuery();
+                        estado = true;
+                    }
+                    con.Close();
+                }
+                return estado;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Hubo un error: ", ex);
+            }
+        }
+
     }
 }

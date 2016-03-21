@@ -28,5 +28,15 @@ namespace Birth.BusinessLogic
         {
             return new DAUsuario().InsertUsuario(parametro);
         }
+
+        /// <summary>
+        /// Actualiza informacion del usuario
+        /// </summary>
+        /// <param name="parametro">propiedades del usuario</param>
+        /// <returns></returns>
+        public bool ActualizarUsuario(BEUsuario parametro)
+        {
+            return new DAUsuario().ActualizarUsuario(parametro);
+        }
     }
 }
