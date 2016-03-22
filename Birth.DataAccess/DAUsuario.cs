@@ -13,28 +13,27 @@ namespace Birth.DataAccess
     public class DAUsuario
     {
         /// <summary>
-        /// Selecciona usuarios de la tabla Perfil.Usuario
+        /// Obtiene usuarios de la tabla Perfil.Usuario
         /// </summary>
-        /// <returns></returns>
-        public List<BEUsuario> ListarUsuario()
+        /// <param name="guid_user">llave clave GUID</param>
+        /// <returns>usuario correspondiente</returns>
+        public BEUsuario ObtenerUsuario(string guid_user)
         {
-            List<BEUsuario> Lista = new List<BEUsuario>();
-            BEUsuario item;
+            BEUsuario item = new BEUsuario();
 
             using (SqlConnection ocn = new SqlConnection(Util.getConnection()))
             {
                 using (SqlCommand ocmd = new SqlCommand("Perfil.SP_Usuario_Obtener", ocn))
                 {
                     ocmd.CommandType = CommandType.StoredProcedure;
+                    ocmd.Parameters.Add("@guid_user", SqlDbType.VarChar).Value = guid_user;
+
                     ocn.Open();
 
                     using (SqlDataReader oReader = ocmd.ExecuteReader())
                     {
                         while (oReader.Read())
                         {
-                            //Instanciamos la variable
-                            item = new BEUsuario();
-
                             //cargamos la informacion de la BD
                             if (!Convert.IsDBNull(oReader["id"]))
                                 item.id = Convert.ToInt32(oReader["id"]);
@@ -71,17 +70,13 @@ namespace Birth.DataAccess
 
                             if (!Convert.IsDBNull(oReader["estado"]))
                                 item.estado = oReader["estado"].ToString();
-
-                            //Agregamos el elemento al listado
-                            Lista.Add(item);
-
                         }
                     }
                 }
 
                 ocn.Close();
-                return Lista;
             }
+            return item;
         }
 
         /// <summary>
@@ -172,7 +167,9 @@ namespace Birth.DataAccess
 
                         if (parametro.idarea != null)
                             cmd.Parameters.Add("@idarea", SqlDbType.Int).Value = parametro.idarea.Value;
-                        
+
+                        cmd.Parameters.Add("@guid_user", SqlDbType.VarChar).Value = parametro.guid_user;
+
                         if (con.State == ConnectionState.Closed)
                             con.Open();
 

@@ -7,6 +7,7 @@ using System.Web.Mvc;
 using Web.UI.Models;
 using Birth.BusinessEntity;
 using Birth.BusinessLogic;
+using Microsoft.AspNet.Identity;
 
 namespace Web.UI.Controllers
 {
@@ -15,9 +16,24 @@ namespace Web.UI.Controllers
         // GET: Usuario
         public ActionResult Register()
         {
+            BLUsuario UsuarioLogic = new BLUsuario();
             UsuarioViewModels modelUser = new UsuarioViewModels();
+            BEUsuario Usuario = UsuarioLogic.ObtenerUsuario(User.Identity.GetUserId());
+
+            modelUser.nom_usuario = Usuario.gls_usuario;
+            modelUser.nombre = Usuario.gls_nombre;
+            modelUser.ape_paterno = Usuario.gls_ape_paterno;
+            modelUser.ape_materno = Usuario.gls_ape_materno;
             modelUser.correo = User.Identity.Name;
 
+            if (Usuario.anexo != null)
+                modelUser.anexo = Convert.ToInt32(Usuario.anexo);
+
+            if (Usuario.idarea != null)
+                modelUser.idarea = Convert.ToInt32(Usuario.idarea);
+
+            if (Usuario.idcargo != null)
+                modelUser.idcargo = Convert.ToInt32(Usuario.idcargo);
 
             BLCargo CargoLogic = new BLCargo();
             List<BECargo> ListaCargos = new List<BECargo>();
@@ -57,8 +73,12 @@ namespace Web.UI.Controllers
                 UsuarioParam.correo = model.correo;
                 UsuarioParam.idcargo = model.idcargo;
                 UsuarioParam.idarea = model.idarea;
+                UsuarioParam.guid_user = User.Identity.GetUserId();
 
                 bool result = UsuarioLogic.ActualizarUsuario(UsuarioParam);
+
+                if (result)
+                    
 
                 return RedirectToAction("Index", "Home");
             }

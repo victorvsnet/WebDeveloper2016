@@ -49,6 +49,10 @@ namespace Web.UI.Models
     public class LoginViewModel
     {
         [Required]
+        [Display(Name = "Nombre Usuario")]
+        public string NombreUsuario { get; set; }
+
+        [Required]
         [Display(Name = "Email")]
         [EmailAddress]
         public string Email { get; set; }
@@ -64,6 +68,10 @@ namespace Web.UI.Models
 
     public class RegisterViewModel
     {
+
+        [Required]
+        [Display(Name = "Usuario")]
+        public string NombreUsuario { get; set; }
 
         [Required]
         [EmailAddress]

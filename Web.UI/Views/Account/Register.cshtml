@@ -42,16 +42,25 @@
             {
                 @Html.AntiForgeryToken()
                 @Html.ValidationSummary("", new { @class = "text-danger" })
+                <!-- Nombre de Usuario -->
+                <div class="form-group has-feedback">
+                    @Html.TextBoxFor(m => m.NombreUsuario, new { @class = "form-control", placeholder = "Usuario" })
+                    <span class="glyphicon fa fa-user form-control-feedback"></span>
+                    @Html.ValidationMessageFor(m => m.NombreUsuario, "", new { @class = "text-danger" })
+                </div>
+                <!-- Email del Usuario -->
                 <div class="form-group has-feedback">
                     @Html.TextBoxFor(m => m.Email, new { @class = "form-control", placeholder = "email" })
                     <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
                     @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
                 </div>
+                <!-- Contrasenia -->
                 <div class="form-group has-feedback">
                     @Html.PasswordFor(m => m.Password, new { @class = "form-control", placeholder = "password" })
                     <span class="glyphicon glyphicon-lock form-control-feedback"></span>
                     @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
                 </div>
+                <!-- Check de confirmacion -->
                 <div class="form-group has-feedback">
                     @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control", placeholder = "confirmar password" })
                     <span class="glyphicon glyphicon-lock form-control-feedback"></span>
