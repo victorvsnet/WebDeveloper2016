@@ -24,7 +24,7 @@ namespace Web.UI.Controllers
             modelUser.nombre = Usuario.gls_nombre;
             modelUser.ape_paterno = Usuario.gls_ape_paterno;
             modelUser.ape_materno = Usuario.gls_ape_materno;
-            modelUser.correo = User.Identity.Name;
+            modelUser.correo = Usuario.correo;
 
             if (Usuario.anexo != null)
                 modelUser.anexo = Convert.ToInt32(Usuario.anexo);

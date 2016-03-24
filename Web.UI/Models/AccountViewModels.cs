@@ -52,7 +52,7 @@ namespace Web.UI.Models
         [Display(Name = "Nombre Usuario")]
         public string NombreUsuario { get; set; }
 
-        [Required]
+        //[Required] //COMENTADO PARA MI VALIDACION
         [Display(Name = "Email")]
         [EmailAddress]
         public string Email { get; set; }
