@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace Web.UI.Models
@@ -72,6 +73,21 @@ namespace Web.UI.Models
         [Required]
         [Display(Name = "Usuario")]
         public string NombreUsuario { get; set; }
+
+        [Required]
+        [Display(Name = "Nombre")]
+        public string Nombre { get; set; }
+
+        [Required]
+        [Display(Name = "Apellido")]
+        public string Apellido { get; set; }
+
+        [Required]
+        [Display(Name = "Cargo")]
+        public string Cargo { get; set; }
+
+        [Display(Name = "Fecha Registro")]
+        public DateTime FechaRegistro { get; set; }
 
         [Required]
         [EmailAddress]

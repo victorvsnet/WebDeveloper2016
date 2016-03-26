@@ -48,6 +48,24 @@
                     <span class="glyphicon fa fa-user form-control-feedback"></span>
                     @Html.ValidationMessageFor(m => m.NombreUsuario, "", new { @class = "text-danger" })
                 </div>
+                <!-- Nombre -->
+                <div class="form-group has-feedback">
+                    @Html.TextBoxFor(m => m.Nombre, new { @class = "form-control", placeholder = "Nombre" })
+                    <span class="glyphicon fa fa-user form-control-feedback"></span>
+                    @Html.ValidationMessageFor(m => m.Nombre, "", new { @class = "text-danger" })
+                </div>
+                <!-- Apellido Paterno -->
+                <div class="form-group has-feedback">
+                    @Html.TextBoxFor(m => m.Apellido, new { @class = "form-control", placeholder = "Apellido Paterno" })
+                    <span class="glyphicon fa fa-user form-control-feedback"></span>
+                    @Html.ValidationMessageFor(m => m.Apellido, "", new { @class = "text-danger" })
+                </div>
+                <!-- Cargo -->
+                <div class="form-group has-feedback">
+                    @Html.TextBoxFor(m => m.Cargo, new { @class = "form-control", placeholder = "Cargo" })
+                    <span class="glyphicon fa fa-user form-control-feedback"></span>
+                    @Html.ValidationMessageFor(m => m.Cargo, "", new { @class = "text-danger" })
+                </div>
                 <!-- Email del Usuario -->
                 <div class="form-group has-feedback">
                     @Html.TextBoxFor(m => m.Email, new { @class = "form-control", placeholder = "email" })

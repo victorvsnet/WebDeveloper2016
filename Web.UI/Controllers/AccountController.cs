@@ -163,7 +163,7 @@ namespace Web.UI.Controllers
         {
             if (ModelState.IsValid)
             {
-                var user = new ApplicationUser { UserName = model.NombreUsuario, Email = model.Email };
+                var user = new ApplicationUser { UserName = model.NombreUsuario, Email = model.Email, Nombres = model.Nombre, Apellidos = model.Apellido, Cargo = model.Cargo, FechaRegistro = DateTime.Today };
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
@@ -175,6 +175,8 @@ namespace Web.UI.Controllers
                     UsuarioParam.guid_user = user.Id;
                     UsuarioParam.correo = model.Email;
                     UsuarioParam.gls_usuario = model.NombreUsuario;
+                    UsuarioParam.gls_nombre = model.Nombre;
+                    UsuarioParam.gls_ape_paterno = model.Apellido;
                     UsuarioParam.idcategoria = 2;
                     UsuarioParam.estado = "1";
 

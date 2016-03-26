@@ -78,9 +78,7 @@ namespace Web.UI.Controllers
                 bool result = UsuarioLogic.ActualizarUsuario(UsuarioParam);
 
                 if (result)
-                    
-
-                return RedirectToAction("Index", "Home");
+                    return RedirectToAction("Index", "Home");
             }
             return View(model);
         }
