@@ -22,7 +22,8 @@ namespace Web.UI.Models
             var userIdentity = await manager.CreateIdentityAsync(this, DefaultAuthenticationTypes.ApplicationCookie);
             // Add custom user claims here
             userIdentity.AddClaim(new Claim("Nombre", this.Nombres + " " + this.Apellidos));
-            userIdentity.AddClaim(new Claim("Registro", this.FechaRegistro.ToString("MMM yyyyy")));
+            userIdentity.AddClaim(new Claim("Registro", this.FechaRegistro.ToString("MMM yyyy")));
+            userIdentity.AddClaim(new Claim("Cargo", this.Cargo));
 
             return userIdentity;
         }

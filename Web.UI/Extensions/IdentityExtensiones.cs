@@ -37,6 +37,20 @@ namespace Web.UI.Extensions
             return !fecha.EsNulo() ? fecha.Value : string.Empty;
         }
 
+        public static string CargoUsuario(this IPrincipal user)
+        {
+            if (!user.Identity.IsAuthenticated) return string.Empty;
+
+            var claims = user.Identity as ClaimsIdentity;
+
+            if (claims.EsNulo()) return string.Empty;
+
+            var cargo = claims
+                .Claims
+                .SingleOrDefault(x => x.Type.Equals("Cargo"));
+            return !cargo.EsNulo() ? cargo.Value : string.Empty;
+        }
+
         public static bool EsNulo(this object objeto)
         {
             return (objeto == null);
