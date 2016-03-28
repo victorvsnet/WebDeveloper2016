@@ -18,9 +18,12 @@
                         <li class="user-header">
                             <img src="~/Content/Estilos/dist/img/avatarvya.png" class="img-circle" alt="User Image">
                             <p>
-                                @User.NombreUsuario() - @User.CargoUsuario()
-                                <small>Miembro desde @User.FechaRegistro()</small>
-                            </p>
+                                <small>
+                                    @User.NombreUsuario() <br />
+                                    @User.CargoUsuario()
+                                </small>
+                                    <small>Miembro desde @User.FechaRegistro()</small>
+</p>
                         </li>
                         <!-- Menu Footer-->
                         <li class="user-footer">

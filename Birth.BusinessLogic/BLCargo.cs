@@ -18,5 +18,10 @@ namespace Birth.BusinessLogic
         {
             return new DACargo().ListarCargo();
         }
+
+        public BECargo ObtenerCargo(int id)
+        {
+            return new DACargo().ObtenerCargo(id);
+        }
     }
 }

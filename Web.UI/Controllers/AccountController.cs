@@ -18,6 +18,18 @@ namespace Web.UI.Controllers
     [Authorize]
     public class AccountController : Controller
     {
+
+        static string UppercaseFirst(string s)
+        {
+            // Check for empty string.
+            if (string.IsNullOrEmpty(s))
+            {
+                return string.Empty;
+            }
+            // Return char and concat substring.
+            return char.ToUpper(s[0]) + s.Substring(1);
+        }
+
         private ApplicationSignInManager _signInManager;
         private ApplicationUserManager _userManager;
 
@@ -173,7 +185,14 @@ namespace Web.UI.Controllers
         {
             if (ModelState.IsValid)
             {
+                BECargo oBECargo = new BECargo();
+                oBECargo = new BLCargo().ObtenerCargo(model.idcargo);
 
+                model.Cargo = oBECargo.gls_Cargo;
+
+                //model.Cargo = UppercaseFirst(oBECargo.gls_Cargo.ToLower());
+                //model.Nombre = UppercaseFirst(model.Nombre.ToLower());
+                //model.Apellido = UppercaseFirst(model.Apellido.ToLower());
 
                 var user = new ApplicationUser { UserName = model.NombreUsuario, Email = model.Email, Nombres = model.Nombre, Apellidos = model.Apellido, Cargo = model.Cargo, FechaRegistro = DateTime.Today };
                 var result = await UserManager.CreateAsync(user, model.Password);
@@ -189,6 +208,7 @@ namespace Web.UI.Controllers
                     UsuarioParam.gls_usuario = model.NombreUsuario;
                     UsuarioParam.gls_nombre = model.Nombre;
                     UsuarioParam.gls_ape_paterno = model.Apellido;
+                    UsuarioParam.idcargo = model.idcargo;
                     UsuarioParam.idcategoria = 2;
                     UsuarioParam.estado = "1";
 

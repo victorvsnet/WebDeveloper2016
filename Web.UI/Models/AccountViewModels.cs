@@ -86,10 +86,10 @@ namespace Web.UI.Models
         [Display(Name = "NomCargo")]
         public string Cargo { get; set; }
 
-        [Display(Name = "Cargo")]
+        [Display(Name = "Listado Cargo")]
         public List<Cargo> ListaCargos { get; set; }
 
-        [Required]
+        [Display(Name = "IdCargo")]
         public int idcargo { get; set; }
 
         [Display(Name = "Fecha Registro")]
