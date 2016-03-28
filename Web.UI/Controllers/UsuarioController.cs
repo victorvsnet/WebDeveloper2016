@@ -64,7 +64,6 @@ namespace Web.UI.Controllers
                 BLUsuario UsuarioLogic = new BLUsuario();
                 BEUsuario UsuarioParam = new BEUsuario();
 
-
                 UsuarioParam.gls_nombre = model.nombre;
                 UsuarioParam.gls_ape_paterno = model.ape_paterno;
                 UsuarioParam.gls_ape_materno = model.ape_materno;

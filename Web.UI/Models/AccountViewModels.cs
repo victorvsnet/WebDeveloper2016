@@ -82,9 +82,15 @@ namespace Web.UI.Models
         [Display(Name = "Apellido")]
         public string Apellido { get; set; }
 
-        [Required]
-        [Display(Name = "Cargo")]
+        //[Required]
+        [Display(Name = "NomCargo")]
         public string Cargo { get; set; }
+
+        [Display(Name = "Cargo")]
+        public List<Cargo> ListaCargos { get; set; }
+
+        [Required]
+        public int idcargo { get; set; }
 
         [Display(Name = "Fecha Registro")]
         public DateTime FechaRegistro { get; set; }
@@ -104,8 +110,13 @@ namespace Web.UI.Models
         [Display(Name = "Confirm password")]
         [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
         public string ConfirmPassword { get; set; }
-    }
 
+        public RegisterViewModel()
+        {
+            ListaCargos = new List<Cargo>();
+        }
+    }
+    
     public class ResetPasswordViewModel
     {
         [Required]

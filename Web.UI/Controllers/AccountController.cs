@@ -11,6 +11,7 @@ using Microsoft.Owin.Security;
 using Web.UI.Models;
 using Birth.BusinessEntity;
 using Birth.BusinessLogic;
+using System.Collections.Generic;
 
 namespace Web.UI.Controllers
 {
@@ -151,7 +152,16 @@ namespace Web.UI.Controllers
         [AllowAnonymous]
         public ActionResult Register()
         {
-            return View();
+            RegisterViewModel modelUser = new RegisterViewModel();
+            BLCargo CargoLogic = new BLCargo();
+
+            List<BECargo> ListaCargos = new List<BECargo>();
+            ListaCargos = CargoLogic.ListarCargo();
+
+            foreach (BECargo item in ListaCargos)
+                modelUser.ListaCargos.Add(new Cargo { id = item.id, gls_Cargo = item.gls_Cargo });
+
+            return View(modelUser);
         }
 
         //
@@ -163,6 +173,8 @@ namespace Web.UI.Controllers
         {
             if (ModelState.IsValid)
             {
+
+
                 var user = new ApplicationUser { UserName = model.NombreUsuario, Email = model.Email, Nombres = model.Nombre, Apellidos = model.Apellido, Cargo = model.Cargo, FechaRegistro = DateTime.Today };
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
