@@ -42,12 +42,6 @@
             {
                 @Html.AntiForgeryToken()
                 @Html.ValidationSummary("", new { @class = "text-danger" })
-                <!-- Nombre de Usuario -->
-                @*<div class="form-group has-feedback">
-                    @Html.TextBoxFor(m => m.NombreUsuario, new { @class = "form-control", placeholder = "Usuario" })
-                    <span class="glyphicon fa fa-pencil form-control-feedback"></span>
-                    @Html.ValidationMessageFor(m => m.NombreUsuario, "", new { @class = "text-danger" })
-                </div>*@
 
                 <!-- Nombre de Usuario / Username -->
                 <div class="form-group">
@@ -60,13 +54,6 @@
                 </div><!-- /.form group -->
 
                 <!-- Nombre -->
-                @*<div class="form-group has-feedback">
-                    @Html.TextBoxFor(m => m.Nombre, new { @class = "form-control", placeholder = "Nombre" })
-                    <span class="fa fa-pencil-square-o form-control-feedback"></span>
-                    @Html.ValidationMessageFor(m => m.Nombre, "", new { @class = "text-danger" })
-                </div>*@
-
-                <!-- Nombre -->
                 <div class="form-group">
                     <div class="input-group">
                         <div class="input-group-addon">
@@ -75,13 +62,6 @@
                         @Html.TextBoxFor(m => m.Nombre, new { @class = "form-control", placeholder = "Nombre" })
                     </div><!-- /.input group -->
                 </div><!-- /.form group -->
-
-                <!-- Apellido Paterno -->
-                @*<div class="form-group has-feedback">
-                    @Html.TextBoxFor(m => m.Apellido, new { @class = "form-control", placeholder = "Apellido Paterno" })
-                    <span class="fa fa-pencil-square-o form-control-feedback"></span>
-                    @Html.ValidationMessageFor(m => m.Apellido, "", new { @class = "text-danger" })
-                </div>*@
 
                 <!-- Apellido Paterno -->
                 <div class="form-group">
@@ -94,15 +74,6 @@
                 </div><!-- /.form group -->
 
                 <!-- Cargo del Usuario -->
-                @*<div class="form-group has-feedback">
-        @Html.DropDownListFor(m => m.idcargo, new SelectList(Model.ListaCargos, "Id", "gls_Cargo"), "Cargo del Usuario", new { @class = "form-control select2" })
-        <!--Html.TextBoxFor(m => m.Cargo, new { class = "form-control", placeholder = "Cargo" })-->
-        <span class="fa fa-sitemap form-control-feedback"></span>
-        @Html.ValidationMessageFor(m => m.idcargo, "", new { @class = "text-danger" })
-    </div>*@
-
-
-                <!-- Cargo del Usuario -->
                 <div class="form-group">
                     <div class="input-group">
                         <div class="input-group-addon">
@@ -111,14 +82,6 @@
                         @Html.DropDownListFor(m => m.idcargo, new SelectList(Model.ListaCargos, "Id", "gls_Cargo"), "Cargo del Usuario", new { @class = "form-control select2" })
                     </div><!-- /.input group -->
                 </div><!-- /.form-group -->
-
-
-                <!-- Email del Usuario -->
-                @*<div class="form-group has-feedback">
-                    @Html.TextBoxFor(m => m.Email, new { @class = "form-control", placeholder = "email" })
-                    <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
-                    @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
-                </div>*@
 
                 <!-- Correo electronico -->
                 <div class="form-group">
@@ -131,13 +94,6 @@
                 </div><!-- /.form group -->
 
                 <!-- Contrasenia -->
-                @*<div class="form-group has-feedback">
-                    @Html.PasswordFor(m => m.Password, new { @class = "form-control", placeholder = "password" })
-                    <span class="glyphicon glyphicon-lock form-control-feedback"></span>
-                    @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
-                </div>*@
-
-                <!-- Contrasenia -->
                 <div class="form-group">
                     <div class="input-group">
                         <div class="input-group-addon">
@@ -146,13 +102,6 @@
                         @Html.PasswordFor(m => m.Password, new { @class = "form-control", placeholder = "password" })
                     </div><!-- /.input group -->
                 </div><!-- /.form group -->
-
-
-                <!-- Check de confirmacion -->
-                @*<div class="form-group has-feedback">
-                    @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control", placeholder = "confirmar password" })
-                    <span class="glyphicon glyphicon-lock form-control-feedback"></span>
-                </div>*@
 
                 <!-- Check de confirmacion -->
                 <div class="form-group">
@@ -163,7 +112,6 @@
                         @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control", placeholder = "confirmar password" })
                     </div><!-- /.input group -->
                 </div><!-- /.form group -->
-
 
 
                 <div class="form-group">
