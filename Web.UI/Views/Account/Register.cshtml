@@ -23,6 +23,11 @@
     <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
     <!-- Theme style -->
     <link rel="stylesheet" href="~/Content/Estilos/dist/css/AdminLTE.min.css">
+    <!-- Para fecha -->
+    @*<link rel="stylesheet" href="~/Content/bootstrap-datepicker.css">
+    <link rel="stylesheet" href="~/Scripts/bootstrap.js">
+    <link rel="stylesheet" href="~/Scripts/bootstrap-datepicker.js">
+    <link rel="stylesheet" href="~/Scripts/respond.js">*@
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -70,6 +75,18 @@
                             <i class="fa fa-pencil-square-o"></i>
                         </div>
                         @Html.TextBoxFor(m => m.Apellido, new { @class = "form-control", placeholder = "Apellido Paterno" })
+                    </div><!-- /.input group -->
+                </div><!-- /.form group -->
+
+                <!-- Fecha de Nacimiento dd/mm/yyyy -->
+                <div class="form-group">
+                    <div class="input-group date" id="datetimepicker1">
+                        <div class="input-group-addon">
+                            <i class="fa fa-calendar"></i>
+                        </div><!--
+                        <input type="text" class="form-control" data-inputmask="'alias': 'dd/mm/yyyy'" data-mask>-->
+                        @Html.TextBoxFor(m => m.FechaRegistro, new { @class = "form-control datepicker", data_inputmask = "'alias': 'dd/mm/yyyy'", data_mask = "date" })
+                        @*@Html.TextBoxFor(m => m.FechaRegistro, new { @class = "form-control", placeholder = "Fecha de Nacimiento" })*@
                     </div><!-- /.input group -->
                 </div><!-- /.form group -->
 
@@ -127,5 +144,14 @@
     <script src="~/Content/Estilos/plugins/jQuery/jQuery-2.1.4.min.js"></script>
     <!-- Bootstrap 3.3.5 -->
     <script src="~/Scripts/bootstrap.min.js"></script>
+
+    <script src="~/Content/bootstrap-datetimepicker-build.less"></script>
+    <script src="~/Scripts/bootstrap-datetimepicker.js"></script>
+    
+    <script type="text/javascript">
+            $(function () {
+                $('#datetimepicker1').datetimepicker();
+            });
+    </script>
 </body>
 </html>

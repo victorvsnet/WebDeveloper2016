@@ -14,6 +14,7 @@ namespace Birth.BusinessEntity
         public string correo { get; set; }
         public int? anexo { get; set; }
         public string gls_usuario { get; set; }
+        public DateTime? fec_nacimiento { get; set; }
         public int? idcargo { get; set; }
         public int? idarea { get; set; }
         public int? idempresa { get; set; }

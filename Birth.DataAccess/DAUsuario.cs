@@ -56,6 +56,9 @@ namespace Birth.DataAccess
                             if (!Convert.IsDBNull(oReader["gls_usuario"]))
                                 item.gls_usuario = oReader["gls_usuario"].ToString();
 
+                            if (!Convert.IsDBNull(oReader["fec_nacimiento"]))
+                                item.fec_nacimiento = Convert.ToDateTime(oReader["fec_nacimiento"]);
+
                             if (!Convert.IsDBNull(oReader["idcargo"]))
                                 item.idcargo = Convert.ToInt32(oReader["idcargo"]);
 
@@ -103,6 +106,9 @@ namespace Birth.DataAccess
 
                         cmd.Parameters.Add("@gls_usuario", SqlDbType.VarChar).Value = parametro.gls_usuario;
                         cmd.Parameters.Add("@correo", SqlDbType.VarChar).Value = parametro.correo;
+
+                        if (parametro.fec_nacimiento != null)
+                            cmd.Parameters.Add("@fec_nacimiento", SqlDbType.DateTime).Value = parametro.fec_nacimiento.Value;
 
                         if (parametro.idcargo != null)
                             cmd.Parameters.Add("@idcargo", SqlDbType.Int).Value = parametro.idcargo.Value;
@@ -161,6 +167,9 @@ namespace Birth.DataAccess
 
                         cmd.Parameters.Add("@gls_usuario", SqlDbType.VarChar).Value = parametro.gls_usuario;
                         cmd.Parameters.Add("@correo", SqlDbType.VarChar).Value = parametro.correo;
+
+                        if (parametro.fec_nacimiento != null)
+                            cmd.Parameters.Add("@fec_nacimiento", SqlDbType.DateTime).Value = parametro.fec_nacimiento.Value;
 
                         if (parametro.idcargo != null)
                             cmd.Parameters.Add("@idcargo", SqlDbType.Int).Value = parametro.idcargo.Value;
