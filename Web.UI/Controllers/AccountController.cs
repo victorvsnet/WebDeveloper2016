@@ -193,6 +193,7 @@ namespace Web.UI.Controllers
                     UsuarioParam.gls_usuario = model.NombreUsuario;
                     UsuarioParam.gls_nombre = model.Nombre;
                     UsuarioParam.gls_ape_paterno = model.Apellido;
+                    UsuarioParam.fec_nacimiento = model.FecNacimiento;
                     UsuarioParam.idcargo = model.idcargo;
                     UsuarioParam.idcategoria = 2;
                     UsuarioParam.estado = "1";

@@ -10,6 +10,9 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Birthday | Registro</title>
+    <script src="~/Scripts/jquery-1.10.2.js"></script>
+    <script src="~/Scripts/moment.js"></script>
+
     <!-- Validacion del ASP MVC -->
     @Scripts.Render("~/bundles/jqueryval")
 
@@ -42,7 +45,7 @@
             <a href="#"><span class="fa fa-birthday-cake margin-r-5"></span><b>Birthday</b>IS</a>
         </div><!-- /.login-logo -->
         <div class="login-box-body">
-            <p class="login-box-msg">Registro de Usuarios</p>
+            <p class="login-box-msg">Registrar de Usuario o @Html.ActionLink("Iniciar Sessión", "Login", new { @class = "btn btn-primary" })</p>
             @using (Html.BeginForm("Register", "Account", FormMethod.Post, new { role = "form" }))
             {
                 @Html.AntiForgeryToken()
@@ -85,7 +88,7 @@
                             <i class="fa fa-calendar"></i>
                         </div><!--
                         <input type="text" class="form-control" data-inputmask="'alias': 'dd/mm/yyyy'" data-mask>-->
-                        @Html.TextBoxFor(m => m.FechaRegistro, new { @class = "form-control datepicker", data_inputmask = "'alias': 'dd/mm/yyyy'", data_mask = "date" })
+                        @Html.TextBoxFor(m => m.FecNacimiento, new { id = "FechaNacimientoDate", @class = "form-control datepicker", data_inputmask = "'alias': 'DD/MM/YYYY'", placeholder = "Fecha de Nacimiento" })
                         @*@Html.TextBoxFor(m => m.FechaRegistro, new { @class = "form-control", placeholder = "Fecha de Nacimiento" })*@
                     </div><!-- /.input group -->
                 </div><!-- /.form group -->
@@ -137,20 +140,22 @@
                     </div>
                 </div>
             }
-            Ya tengo una cuenta @Html.ActionLink("Iniciar Sessión", "Login", new { @class = "btn btn-primary" })
+            <!--Ya tengo una cuenta Html.ActionLink("Iniciar Sessión", "Login", new { class = "btn btn-primary" })-->
         </div><!-- /.login-box-body -->
     </div><!-- /.login-box -->
     <!-- jQuery 2.1.4 -->
-    <script src="~/Content/Estilos/plugins/jQuery/jQuery-2.1.4.min.js"></script>
+    @*<script src="~/Content/Estilos/plugins/jQuery/jQuery-2.1.4.min.js"></script>*@
     <!-- Bootstrap 3.3.5 -->
     <script src="~/Scripts/bootstrap.min.js"></script>
 
-    <script src="~/Content/bootstrap-datetimepicker-build.less"></script>
+    <!--<script src="~/Content/bootstrap-datetimepicker-build.less"></script>-->
     <script src="~/Scripts/bootstrap-datetimepicker.js"></script>
-    
+
     <script type="text/javascript">
             $(function () {
-                $('#datetimepicker1').datetimepicker();
+                $('#FechaNacimientoDate').datetimepicker({
+                    format: 'DD/MM/YYYY'
+                });
             });
     </script>
 </body>

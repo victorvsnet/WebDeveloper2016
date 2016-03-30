@@ -82,9 +82,10 @@ namespace Web.UI.Models
         [Display(Name = "Apellido")]
         public string Apellido { get; set; }
 
+        [DataType(DataType.Date)]
         [Required]
         [Display(Name = "Fecha Nacimiento")]
-        public string FecNacimiento { get; set; }
+        public DateTime? FecNacimiento { get; set; }
 
         //[Required]
         [Display(Name = "NomCargo")]
@@ -96,9 +97,8 @@ namespace Web.UI.Models
         [Display(Name = "IdCargo")]
         public int idcargo { get; set; }
 
-        [DataType(DataType.Date)]
         [Display(Name = "Fecha Registro")]
-        public DateTime? FechaRegistro { get; set; }
+        public DateTime FechaRegistro { get; set; }
 
         [Required]
         [EmailAddress]
