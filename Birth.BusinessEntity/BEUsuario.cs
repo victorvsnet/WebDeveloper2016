@@ -20,5 +20,8 @@ namespace Birth.BusinessEntity
         public int? idempresa { get; set; }
         public int? idcategoria { get; set; }
         public string guid_user { get; set; }
+
+        public string gls_Cargo { get; set; }
+        public string gls_area { get; set; }
     }
 }

@@ -39,5 +39,15 @@ namespace Birth.BusinessLogic
         {
             return new DAUsuario().ActualizarUsuario(parametro);
         }
+
+        /// <summary>
+        /// Obtiene la lisya de cumpleaños del dia.
+        /// </summary>
+        /// <param name="FechaActual">Fecha actual para mostrar los cumpleaños.</param>
+        /// <returns>Cumpleaños</returns>
+        public List<BEUsuario> ListaCumpleanios(DateTime FechaActual)
+        {
+            return new DAUsuario().ListaCumpleanios(FechaActual);
+        }
     }
 }

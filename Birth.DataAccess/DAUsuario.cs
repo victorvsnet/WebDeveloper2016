@@ -195,5 +195,62 @@ namespace Birth.DataAccess
             }
         }
 
+        /// <summary>
+        /// Obtiene la lisya de cumpleaños del dia.
+        /// </summary>
+        /// <param name="FechaActual">Fecha actual para mostrar los cumpleaños.</param>
+        /// <returns>Cumpleaños</returns>
+        public List<BEUsuario> ListaCumpleanios(DateTime FechaActual)
+        {
+            try
+            {
+                List<BEUsuario> Lista = new List<BEUsuario>();
+                BEUsuario item;
+
+                using (SqlConnection ocn = new SqlConnection(Util.getConnection()))
+                {
+                    using (SqlCommand ocmd = new SqlCommand("Perfil.SP_cumpleanios_Select", ocn))
+                    {
+                        ocmd.CommandType = CommandType.StoredProcedure;
+                        ocn.Open();
+                        using (SqlDataReader oReader = ocmd.ExecuteReader())
+                        {
+                            while (oReader.Read())
+                            {
+                                //Instanciamos la variable
+                                item = new BEUsuario();
+
+                                //cargamos la informacion de la BD
+                                if (!Convert.IsDBNull(oReader["id"]))
+                                    item.id = Convert.ToInt32(oReader["id"]);
+
+                                if (!Convert.IsDBNull(oReader["gls_nombre"]))
+                                    item.gls_nombre = oReader["gls_nombre"].ToString();
+
+                                if (!Convert.IsDBNull(oReader["gls_ape_paterno"]))
+                                    item.gls_ape_paterno = oReader["gls_ape_paterno"].ToString();
+
+                                if (!Convert.IsDBNull(oReader["gls_Cargo"]))
+                                    item.gls_Cargo = oReader["gls_Cargo"].ToString();
+
+                                if (!Convert.IsDBNull(oReader["gls_area"]))
+                                    item.gls_area = oReader["gls_area"].ToString();
+
+                                //Agregamos el elemento al listado
+                                Lista.Add(item);
+                            }
+                        }
+                    }
+                    ocn.Close();
+                }
+
+                return Lista;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Hubo un error: ", ex);
+            }
+        }
+
     }
 }
