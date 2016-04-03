@@ -1,8 +1,11 @@
-﻿using System;
+﻿using Birth.BusinessEntity;
+using Birth.BusinessLogic;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using Web.UI.Models;
 
 namespace Web.UI.Controllers
 {
@@ -10,7 +13,32 @@ namespace Web.UI.Controllers
     {
         public ActionResult Index()
         {
-            return View();
+            BLUsuario oBLUsuario = new BLUsuario();
+            List<BEUsuario> oListaUsuario;
+
+            //Realizamos la busqueda de los cumpleaños del dia
+            oListaUsuario = oBLUsuario.ListaCumpleanios(DateTime.Today);
+
+            List<CumpleaniosViewModels> ListaCumpleanios = new List<CumpleaniosViewModels>();
+            CumpleaniosViewModels cumpleanio;
+
+            foreach (BEUsuario item in oListaUsuario)
+            {
+                cumpleanio = new CumpleaniosViewModels();
+
+                //Cargamos la informacion del cumpleañero encontrado
+                cumpleanio.id = item.id;
+                cumpleanio.nombre = item.gls_nombre;
+                cumpleanio.ape_paterno = item.gls_ape_paterno;
+                cumpleanio.gls_Cargo = item.gls_Cargo;
+                cumpleanio.gls_area = item.gls_area;
+
+                //Agregamos el cumpleaño
+                ListaCumpleanios.Add(cumpleanio);
+            }
+
+
+            return View(ListaCumpleanios);
         }
 
         public ActionResult About()
