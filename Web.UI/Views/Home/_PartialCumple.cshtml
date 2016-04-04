@@ -1,0 +1,25 @@
+﻿@model Web.UI.Models.CumpleaniosViewModels
+
+<div class="col-md-4">
+    <!-- Widget: user widget style 1 -->
+    <div class="box box-widget widget-user-2">
+        <!-- Add the bg color to the header using any of the bg-* classes -->
+        <div class="widget-user-header bg-aqua-active">
+            <a href="profile.html">
+                <div class="widget-user-image">
+                    <img class="img-circle" src="~/Content/Estilos/dist/img/per17-128x128.png" alt="User Avatar">
+                </div><!-- /.widget-user-image -->
+            </a>
+            <h3 class="widget-user-username">@Model.nombre @Model.ape_paterno</h3>
+            <h5 class="widget-user-desc"><small>@Model.gls_Cargo - @Model.gls_area</small></h5>
+        </div>
+        <div class="box-footer no-padding">
+            <ul class="nav nav-stacked">
+                <li><a href="profile.html"><i class="fa fa-comment margin-r-5"></i>Mensajes <span class="pull-right badge bg-blue">14</span></a></li>
+                <li><a href="#"><i class="fa fa-users margin-r-5"></i>Organizadores</a></li>
+                <li><a href="#"><i class="fa fa-street-view margin-r-5"></i>Jose Carrillo<span class="pull-right">SOPORTE TECNICO</span></a></li>
+                <li><a href="#"><i class="fa fa-street-view margin-r-5"></i>Julio Lino<span class="pull-right">DESARROLLO</span></a></li>
+            </ul>
+        </div>
+    </div><!-- /.widget-user -->
+</div><!-- /.col -->

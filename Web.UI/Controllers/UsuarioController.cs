@@ -24,6 +24,7 @@ namespace Web.UI.Controllers
             modelUser.nombre = Usuario.gls_nombre;
             modelUser.ape_paterno = Usuario.gls_ape_paterno;
             modelUser.ape_materno = Usuario.gls_ape_materno;
+            modelUser.FecNacimiento = Usuario.fec_nacimiento;
             modelUser.correo = Usuario.correo;
 
             if (Usuario.anexo != null)

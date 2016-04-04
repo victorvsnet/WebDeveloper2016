@@ -4,6 +4,10 @@
     ViewBag.Title = "Index";
 }
 
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
 <div class="box box-default">
     <div class="box-body">
         <div class="row">
@@ -73,6 +77,17 @@
                             </div><!-- /.input group -->
                         </div><!-- /.form group -->
 
+                        <!-- Fecha de Nacimiento -->
+                        <div class="form-group">
+                            <div class="input-group date">
+                                <div class="input-group-addon">
+                                    <i class="fa fa-calendar"></i>
+                                </div>
+                                @Html.TextBoxFor(model => model.FecNacimiento, new { id = "FechaNacimientoDate", @class = "form-control datepicker", data_inputmask = "'alias': 'DD/MM/YYYY'", placeholder = "Fecha de Nacimiento" })
+                                @Html.ValidationMessageFor(model => model.FecNacimiento, "", new { @class = "text-danger" })
+                            </div><!-- /.input group -->
+                        </div><!-- /.form group -->
+
                         <!-- Numero de Anexo -->
                         <div class="form-group">
                             <div class="input-group">
@@ -124,6 +139,13 @@
     @Html.ActionLink("Back to List", "Index")
 </div>
 
-@section Scripts {
-    @Scripts.Render("~/bundles/jqueryval")
-}
+
+
+
+<script type="text/javascript">
+            $(function () {
+                $('#FechaNacimientoDate').datetimepicker({
+                    format: 'DD/MM/YYYY'
+                });
+            });
+</script>

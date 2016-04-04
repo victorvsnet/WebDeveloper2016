@@ -19,6 +19,11 @@ namespace Web.UI.Models
         [Display(Name = "Apellido Materno")]
         public string ape_materno { get; set; }
 
+        [DataType(DataType.Date)]
+        [Required]
+        [Display(Name = "Fecha Nacimiento")]
+        public DateTime? FecNacimiento { get; set; }
+
         [Display(Name = "Nro. Anexo")]
         public int anexo { get; set; }
 

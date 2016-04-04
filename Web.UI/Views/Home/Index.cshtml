@@ -3,6 +3,13 @@
     ViewBag.Title = "Birthday | Inicio";
 }
 <div class="row">
+    @foreach (var item in Model)
+    {
+        @Html.Partial("_PartialCumple", item)
+    }
+</div><!-- /.row -->
+
+    @*<!--Victor Yucra-->
     <div class="col-md-4">
         <!-- Widget: user widget style 1 -->
         <div class="box box-widget widget-user-2">
@@ -26,6 +33,8 @@
             </div>
         </div><!-- /.widget-user -->
     </div><!-- /.col -->
+    
+    <!--Julio Lino-->
     <div class="col-md-4">
         <!-- Widget: user widget style 1 -->
         <div class="box box-widget widget-user-2">
@@ -49,6 +58,8 @@
             </div>
         </div><!-- /.widget-user -->
     </div><!-- /.col -->
+    
+    <!--Rafael Castillo-->
     <div class="col-md-4">
         <!-- Widget: user widget style 1 -->
         <div class="box box-widget widget-user-2">
@@ -71,5 +82,4 @@
                 </ul>
             </div>
         </div><!-- /.widget-user -->
-    </div><!-- /.col -->
-</div><!-- /.row -->
+    </div><!-- /.col -->*@
