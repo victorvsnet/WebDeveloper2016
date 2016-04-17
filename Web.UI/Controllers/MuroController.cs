@@ -9,8 +9,9 @@ namespace Web.UI.Controllers
     public class MuroController : Controller
     {
         // GET: Muro
-        public ActionResult Muro(int iduser)
+        public ActionResult Detalle(int iduser)
         {
+            ViewBag.IdUsuario = iduser;
             return View();
         }
     }

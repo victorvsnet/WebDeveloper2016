@@ -14,6 +14,17 @@ namespace Web.UI
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
             routes.MapRoute(
+                name: "DetalleSaludos",
+                url: "Muro/{iduser}",
+                defaults: new
+                {
+                    controller = "Muro",
+                    action = "Detalle"
+                },
+                constraints: new { iduser = @"\d+" }
+                );
+
+            routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Account", action = "Login", id = UrlParameter.Optional }

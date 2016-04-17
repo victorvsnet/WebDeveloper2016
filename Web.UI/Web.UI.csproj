@@ -1275,7 +1275,7 @@
     <Content Include="Views\Account\LoginUserLocked.cshtml" />
     <Content Include="Views\Usuario\Register.cshtml" />
     <Content Include="Views\Home\_PartialCumple.cshtml" />
-    <Content Include="Views\Muro\Muro.cshtml" />
+    <Content Include="Views\Muro\Detalle.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
