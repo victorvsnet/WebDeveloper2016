@@ -300,6 +300,8 @@
     <Content Include="Content\Estilos\dist\img\user6-128x128.jpg" />
     <Content Include="Content\Estilos\dist\img\user7-128x128.jpg" />
     <Content Include="Content\Estilos\dist\img\user8-128x128.jpg" />
+    <Content Include="Content\Estilos\dist\img\user_1.png" />
+    <Content Include="Content\Estilos\dist\img\user_2.png" />
     <Content Include="Content\Estilos\dist\js\app.js" />
     <Content Include="Content\Estilos\dist\js\app.min.js" />
     <Content Include="Content\Estilos\dist\js\demo.js" />
