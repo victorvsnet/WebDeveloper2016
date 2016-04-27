@@ -15,5 +15,6 @@ namespace Web.UI.Models
         public string ape_paterno { get; set; }
         public string gls_Cargo { get; set; }
         public string gls_area { get; set; }
+        public string Username { get; set; }
     }
 }

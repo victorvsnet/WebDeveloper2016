@@ -300,8 +300,13 @@
     <Content Include="Content\Estilos\dist\img\user6-128x128.jpg" />
     <Content Include="Content\Estilos\dist\img\user7-128x128.jpg" />
     <Content Include="Content\Estilos\dist\img\user8-128x128.jpg" />
-    <Content Include="Content\Estilos\dist\img\user_1.png" />
-    <Content Include="Content\Estilos\dist\img\user_2.png" />
+    <Content Include="Content\Estilos\dist\img\user_ACHANG.png" />
+    <Content Include="Content\Estilos\dist\img\user_CCORNELIO.png" />
+    <Content Include="Content\Estilos\dist\img\user_DJAIMES.png" />
+    <Content Include="Content\Estilos\dist\img\user_JLINO.png" />
+    <Content Include="Content\Estilos\dist\img\user_MLIENDO.png" />
+    <Content Include="Content\Estilos\dist\img\user_VPOLO.png" />
+    <Content Include="Content\Estilos\dist\img\user_VYUCRA.png" />
     <Content Include="Content\Estilos\dist\js\app.js" />
     <Content Include="Content\Estilos\dist\js\app.min.js" />
     <Content Include="Content\Estilos\dist\js\demo.js" />

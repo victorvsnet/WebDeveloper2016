@@ -236,6 +236,9 @@ namespace Birth.DataAccess
                                 if (!Convert.IsDBNull(oReader["gls_area"]))
                                     item.gls_area = oReader["gls_area"].ToString();
 
+                                if (!Convert.IsDBNull(oReader["gls_usuario"]))
+                                    item.gls_usuario = oReader["gls_usuario"].ToString();
+
                                 //Agregamos el elemento al listado
                                 Lista.Add(item);
                             }

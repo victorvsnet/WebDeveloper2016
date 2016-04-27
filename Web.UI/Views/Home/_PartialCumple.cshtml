@@ -5,10 +5,10 @@
     <div class="box box-widget widget-user-2">
         <!-- Add the bg color to the header using any of the bg-* classes -->
         <div class="widget-user-header bg-aqua-active">
-            <a href="/Muro/2">
+            <a href="/Muro/@Model.id">
                 <div class="widget-user-image">
                     <!--<img class="img-circle" src="~/Content/Estilos/dist/img/per21-128x128.png" alt="User Avatar">-->
-                    <img src="@Url.Content("~/Content/Estilos/dist/img/user_"+Model.id+".png")" />
+                    <img src="@Url.Content("~/Content/Estilos/dist/img/user_"+Model.Username+".png")" />
                 </div><!-- /.widget-user-image -->
             </a>
             <h3 class="widget-user-username">@Model.nombre @Model.ape_paterno</h3>

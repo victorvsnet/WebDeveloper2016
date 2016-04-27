@@ -32,6 +32,7 @@ namespace Web.UI.Controllers
                 cumpleanio.ape_paterno = item.gls_ape_paterno;
                 cumpleanio.gls_Cargo = item.gls_Cargo;
                 cumpleanio.gls_area = item.gls_area;
+                cumpleanio.Username = item.gls_usuario;
 
                 //Agregamos el cumpleaño
                 ListaCumpleanios.Add(cumpleanio);
