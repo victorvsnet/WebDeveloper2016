@@ -3,7 +3,292 @@
     ViewBag.Title = "Muro";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+<div class="row">
+    <!--<h2>Muro</h2>
+    bienvenido: arroba_ViewBag.IdUsuario-->
 
-<h2>Muro</h2>
-bienvenido: @ViewBag.IdUsuario
+    <!--(INI)Columna Izquierda Datos del Usuario-->
+    <div class="col-md-3">
+        <!-- Profile Image -->
+        <div class="box box-primary">
+            <div class="box-body box-profile">
+                <img class="profile-user-img img-responsive img-circle" src="~/Content/Estilos/dist/img/per11-128x128.png" alt="User profile picture">
+                <h3 class="profile-username text-center">Victor Yucra</h3>
+                <p class="text-muted text-center">Analista Funcional</p>
+
+                <ul class="list-group list-group-unbordered">
+                    <li class="list-group-item">
+                        <i class="fa fa-coffee margin-r-5"></i><b>Estado</b> <a class="pull-right">Trabajar para Viajar!</a>
+                    </li>
+                    <li class="list-group-item">
+                        <i class="fa fa-phone-square margin-r-5"></i><b>Anexo</b> <a class="pull-right">4037</a>
+                    </li>
+                    <li class="list-group-item">
+                        <i class="fa fa-comment margin-r-5"></i><b>Mensajes</b> <a class="pull-right">14</a>
+                    </li>
+                    <li class="list-group-item">
+                        <i class="fa fa-birthday-cake margin-r-5"></i><b>Cumplea&ntilde;os</b> <a class="pull-right">15 Agosto</a>
+                    </li>
+                </ul>
+            </div><!-- /.box-body -->
+        </div><!-- /.box -->
+        <!-- About Me Box -->
+        <div class="box box-primary">
+            <div class="box-header with-border">
+                <h3 class="box-title">Organizadores</h3>
+            </div><!-- /.box-header -->
+            <div class="box-body">
+                <ul class="list-group list-group-unbordered">
+                    <li class="list-group-item">
+                        <i class="fa fa-users margin-r-5"></i><b>Jose Carrillo</b> <a class="pull-right">Soporte Tecnico</a>
+                    </li>
+                    <li class="list-group-item">
+                        <i class="fa fa-users margin-r-5"></i><b>Julio Lino</b> <a class="pull-right">Desarrollo</a>
+                    </li>
+                </ul>
+
+                <strong><i class="fa fa-file-text-o margin-r-5"></i> Comentario</strong>
+                <p>Los organizadores son los responsables de la decoracion del sitio del cumplea&ntilde;ero.</p>
+            </div><!-- /.box-body -->
+        </div><!-- /.box -->
+    </div><!-- /.col -->
+    <!--(FIN)Columna Izquierda Datos del Usuario-->
+
+    <!--(INI)Bloque Body Actividades-->
+    <div class="col-md-9">
+        <div class="nav-tabs-custom">
+            <ul class="nav nav-tabs">
+                <li class="active"><a href="#activity" data-toggle="tab">Actividades</a></li>
+            </ul>
+            <div class="tab-content">
+                <div class="active tab-pane" id="activity">
+
+                    <div class="post">
+                        <form class='form-horizontal'>
+                            <div class='form-group margin-bottom-none'>
+                                <div class='col-sm-9'>
+                                    <input class="form-control input-sm" placeholder="Deja un mensaje">
+                                </div>
+                                <div class='col-sm-3'>
+                                    <button class='btn btn-danger pull-right btn-block btn-sm'>Enviar</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+
+                    <!-- Post -->
+                    <div class="post">
+                        <div class="user-block">
+                            <img class="img-circle img-bordered-sm" src="~/Content/Estilos/dist/img/per4-128x128.png" alt="user image">
+                            <span class='username'>
+                                <a href="#">Rafael Castillo</a>
+                                <a href='#' class='pull-right btn-box-tool'><i class='fa fa-times'></i></a>
+                            </span>
+                            <span class='description'>Publicado - 10:30 AM</span>
+                        </div><!-- /.user-block -->
+                        <p>
+                            Oe borrachos todo lo ven tomar, ya apuren donde va hacer, yo me pongo la primera ronda! Feliz cumple Victor.
+                        </p>
+                    </div><!-- /.post -->
+                    <!-- Post -->
+                    <div class="post">
+                        <div class="user-block">
+                            <img class="img-circle img-bordered-sm" src="~/Content/Estilos/dist/img/per12-128x128.png" alt="user image">
+                            <span class='username'>
+                                <a href="#">Ricardo Larriega</a>
+                                <a href='#' class='pull-right btn-box-tool'><i class='fa fa-times'></i></a>
+                            </span>
+                            <span class='description'>Publicado - 10:30 AM</span>
+                        </div><!-- /.user-block -->
+                        <p>
+                            Saludos, te hubieras tomado todo el dia, visita a tu familia oe...! ya ni te reconocen
+                        </p>
+                    </div><!-- /.post -->
+                    <!-- Post -->
+                    <div class="post">
+                        <div class="user-block">
+                            <img class="img-circle img-bordered-sm" src="~/Content/Estilos/dist/img/per22-128x128.png" alt="user image">
+                            <span class='username'>
+                                <a href="#">Jesus Tovar</a>
+                                <a href='#' class='pull-right btn-box-tool'><i class='fa fa-times'></i></a>
+                            </span>
+                            <span class='description'>Publicado - 10:30 AM</span>
+                        </div><!-- /.user-block -->
+                        <p>
+                            Feliz Cumple Victor!
+                        </p>
+                    </div><!-- /.post -->
+                    <!-- Post -->
+                    <div class="post">
+                        <div class="user-block">
+                            <img class="img-circle img-bordered-sm" src="~/Content/Estilos/dist/img/per8-128x128.png" alt="user image">
+                            <span class='username'>
+                                <a href="#">Antoinette Arias</a>
+                                <a href='#' class='pull-right btn-box-tool'><i class='fa fa-times'></i></a>
+                            </span>
+                            <span class='description'>Publicado - 10:30 AM</span>
+                        </div><!-- /.user-block -->
+                        <p>
+                            Saludos, que tengas un gran dia, Feliz Cumple!
+                        </p>
+                    </div><!-- /.post -->
+                    <!-- Post -->
+                    <div class="post">
+                        <div class="user-block">
+                            <img class="img-circle img-bordered-sm" src="~/Content/Estilos/dist/img/per11-128x128.png" alt="user image">
+                            <span class='username'>
+                                <a href="#">Giancarlo Cabanillas</a>
+                                <a href='#' class='pull-right btn-box-tool'><i class='fa fa-times'></i></a>
+                            </span>
+                            <span class='description'>Publicado - 10:30 AM</span>
+                        </div><!-- /.user-block -->
+                        <p>
+                            HB, de todas formas me apunto para las aguas espirituosas, saludos Radio LA ZONA!
+                        </p>
+                    </div><!-- /.post -->
+                    <!-- Post -->
+                    <div class="post">
+                        <div class="user-block">
+                            <img class="img-circle img-bordered-sm" src="~/Content/Estilos/dist/img/per17-128x128.png" alt="user image">
+                            <span class='username'>
+                                <a href="#">Roberto Alegre</a>
+                                <a href='#' class='pull-right btn-box-tool'><i class='fa fa-times'></i></a>
+                            </span>
+                            <span class='description'>Publicado - 10:30 AM</span>
+                        </div><!-- /.user-block -->
+                        <p>
+                            Feliz cumpleaños, acabando la chamba nos reunimos si o si con la gente con unas aguas espirituosas.
+                        </p>
+                    </div><!-- /.post -->
+                    <!-- Post -->
+                    <div class="post">
+                        <div class="user-block">
+                            <img class="img-circle img-bordered-sm" src="~/Content/Estilos/dist/img/per5-128x128.png" alt="user image">
+                            <span class='username'>
+                                <a href="#">Marcos Soriano</a>
+                                <a href='#' class='pull-right btn-box-tool'><i class='fa fa-times'></i></a>
+                            </span>
+                            <span class='description'>Publicado - 10:30 AM</span>
+                        </div><!-- /.user-block -->
+                        <p>
+                            Feliz cumpleaños, pasala genial, que tengas buen dia att. guarana!
+                        </p>
+                    </div><!-- /.post -->
+                    <!-- Post -->
+                    <div class="post">
+                        <div class="user-block">
+                            <img class="img-circle img-bordered-sm" src="~/Content/Estilos/dist/img/per1-128x128.png" alt="user image">
+                            <span class='username'>
+                                <a href="#">Jose Carrillo</a>
+                                <a href='#' class='pull-right btn-box-tool'><i class='fa fa-times'></i></a>
+                            </span>
+                            <span class='description'>Publicado - 10:30 AM</span>
+                        </div><!-- /.user-block -->
+                        <p>
+                            Feliz cumpleaños Tocayo de Victor, a la fidme hoy somos cebichon.
+                        </p>
+                    </div><!-- /.post -->
+                    <!-- Post -->
+                    <div class="post">
+                        <div class="user-block">
+                            <img class="img-circle img-bordered-sm" src="~/Content/Estilos/dist/img/per10-128x128.png" alt="user image">
+                            <span class='username'>
+                                <a href="#">Victor Polo</a>
+                                <a href='#' class='pull-right btn-box-tool'><i class='fa fa-times'></i></a>
+                            </span>
+                            <span class='description'>Publicado - 10:30 AM</span>
+                        </div><!-- /.user-block -->
+                        <p>
+                            Tocayo, feliz cumpleaños, acabo de llegar, nos vemos en el almuerzo, te invitamos pide lo que quieras en el Chaparron,
+                            refresco con yapa! vamos con Carrillo, Marco, Cornelio y Diego.
+                        </p>
+                    </div><!-- /.post -->
+                    <!-- Post -->
+                    <div class="post clearfix">
+                        <div class='user-block'>
+                            <img class='img-circle img-bordered-sm' src='~/Content/Estilos/dist/img/per11-128x128.png' alt='user image'>
+                            <span class='username'>
+                                <a href="#">Fredy Gonzales</a>
+                                <a href='#' class='pull-right btn-box-tool'><i class='fa fa-times'></i></a>
+                            </span>
+                            <span class='description'>Publicado - 09:35 AM</span>
+                        </div><!-- /.user-block -->
+                        <p>
+                            Hola amigo, oiga, no le permito que no celebre su cumpleaños, que pase un Feliz cumpleaños.
+                        </p>
+
+
+                    </div><!-- /.post -->
+                    <!-- Post -->
+                    <div class="post clearfix">
+                        <div class='user-block'>
+                            <img class='img-circle img-bordered-sm' src='~/Content/Estilos/dist/img/per15-128x128.png' alt='user image'>
+                            <span class='username'>
+                                <a href="#">Marco Liendo</a>
+                                <a href='#' class='pull-right btn-box-tool'><i class='fa fa-times'></i></a>
+                            </span>
+                            <span class='description'>Publicado - 09:05 AM</span>
+                        </div><!-- /.user-block -->
+                        <p>
+                            Hola Victor, Feliz cumpleaños, te pase el SRI 25175.
+                        </p>
+
+
+                    </div><!-- /.post -->
+                    <!-- Post -->
+                    <div class="post clearfix">
+                        <div class='user-block'>
+                            <img class='img-circle img-bordered-sm' src='~/Content/Estilos/dist/img/per2-128x128.png' alt='user image'>
+                            <span class='username'>
+                                <a href="#">Christian Cornelio</a>
+                                <a href='#' class='pull-right btn-box-tool'><i class='fa fa-times'></i></a>
+                            </span>
+                            <span class='description'>Publicado - 08:50 AM</span>
+                        </div><!-- /.user-block -->
+                        <p>
+                            Hola amigo, Feliz cumpleaños compare!
+                        </p>
+
+
+                    </div><!-- /.post -->
+                    <!-- Post -->
+                    <div class="post clearfix">
+                        <div class='user-block'>
+                            <img class='img-circle img-bordered-sm' src='~/Content/Estilos/dist/img/per3-128x128.png' alt='user image'>
+                            <span class='username'>
+                                <a href="#">Julio Lino</a>
+                                <a href='#' class='pull-right btn-box-tool'><i class='fa fa-times'></i></a>
+                            </span>
+                            <span class='description'>Publicado - 08:47 AM</span>
+                        </div><!-- /.user-block -->
+                        <p>
+                            Hola amigo, Feliz cumpleaños, HOY HAY CIERRE! :) todos al almuerzo a las 12:20 en el Señor Limon, cierren sus temas antes
+                            del medio dia para no perder la reserva, que tengas un buen dia Victor!
+                        </p>
+
+
+                    </div><!-- /.post -->
+                    <!-- Post -->
+                    <div class="post clearfix">
+                        <div class='user-block'>
+                            <img class='img-circle img-bordered-sm' src='~/Content/Estilos/dist/img/per9-128x128.png' alt='user image'>
+                            <span class='username'>
+                                <a href="#">Elizabeth Estela</a>
+                                <a href='#' class='pull-right btn-box-tool'><i class='fa fa-times'></i></a>
+                            </span>
+                            <span class='description'>Publicado - 08:45 AM</span>
+                        </div><!-- /.user-block -->
+                        <p>
+                            Hola amigo, Feliz cumpleaños, HOY HAY CIERRE! :) todos al almuerzo a las 12:20 en el Señor Limon, cierren sus temas antes
+                            del medio dia para no perder la reserva, que tengas un buen dia Victor!
+                        </p>
+                    </div><!-- /.post -->
+
+                </div><!-- /.tab-pane -->
+
+            </div><!-- /.tab-content -->
+        </div><!-- /.nav-tabs-custom -->
+    </div><!-- /.col -->
+    <!--(FIN)Bloque Body Actividades-->
+</div>
 
