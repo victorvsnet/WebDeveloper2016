@@ -15,13 +15,13 @@ namespace Web.UI
 
             routes.MapRoute(
                 name: "DetalleSaludos",
-                url: "Muro/{iduser}",
+                url: "Muro/{nomUser}",
                 defaults: new
                 {
                     controller = "Muro",
                     action = "Detalle"
-                },
-                constraints: new { iduser = @"\d+" }
+                }
+                //constraints: new { nomUser = @"\d+" }
                 );
 
             routes.MapRoute(

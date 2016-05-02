@@ -68,6 +68,7 @@ namespace Web.UI.Controllers
                 UsuarioParam.gls_nombre = model.nombre;
                 UsuarioParam.gls_ape_paterno = model.ape_paterno;
                 UsuarioParam.gls_ape_materno = model.ape_materno;
+                UsuarioParam.fec_nacimiento = model.FecNacimiento;
                 UsuarioParam.anexo = model.anexo;
                 UsuarioParam.gls_usuario = model.nom_usuario;
                 UsuarioParam.correo = model.correo;

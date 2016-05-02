@@ -12,8 +12,6 @@
     <div class="box-body">
         <div class="row">
             <div class="col-md-6">
-                <!--<div class="">-->
-                <!--<div class="box-body">-->
 
                 @using (Html.BeginForm(new { @class = "box box-info" }))
                 {
@@ -56,6 +54,7 @@
                                 @Html.ValidationMessageFor(model => model.nombre, "", new { @class = "text-danger" })
                             </div><!-- /.input group -->
                         </div><!-- /.form group -->
+
                         <!-- Apellido Paterno -->
                         <div class="form-group">
                             <div class="input-group">
@@ -66,6 +65,7 @@
                                 @Html.ValidationMessageFor(model => model.ape_paterno, "", new { @class = "text-danger" })
                             </div><!-- /.input group -->
                         </div><!-- /.form group -->
+
                         <!-- Apellido Materno -->
                         <div class="form-group">
                             <div class="input-group">
@@ -119,17 +119,13 @@
                             </div><!-- /.input group -->
                         </div><!-- /.form-group -->
 
-
                     </div><!-- /.box-body -->
                     <div class="box-footer">
                         <input type="submit" value="Guardar" class="btn btn-primary" />
                     </div>
 
-
                 }
 
-                <!--</div>-->
-                <!--</div>-->
             </div>
         </div>
     </div>
@@ -138,9 +134,6 @@
 <div>
     @Html.ActionLink("Back to List", "Index")
 </div>
-
-
-
 
 <script type="text/javascript">
             $(function () {
