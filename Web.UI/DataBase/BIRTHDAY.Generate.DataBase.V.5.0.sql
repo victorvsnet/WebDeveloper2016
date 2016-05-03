@@ -223,26 +223,32 @@ Descripcion: Selecciona usuarios de la tabla Perfil.Usuario
 Creado Por: Victor Yucra
 Fecha Creacion: 11/03/2016
 ********************************************************************************/
-create procedure Perfil.SP_Usuario_Obtener
-	@guid_user varchar(128)
+Alter procedure Perfil.SP_Usuario_Obtener
+	@gls_usuario varchar(24)
 as
 begin
 	select
-		 id
-		,gls_nombre
-		,gls_ape_paterno
-		,gls_ape_materno
-		,correo
-		,anexo
-		,fec_nacimiento
-		,gls_usuario
-		,idcargo
-		,idarea
-		,idempresa
-		,idcategoria
-		,estado
-	from Perfil.Usuario
-	where guid_user = @guid_user;
+		 U.id
+		,U.gls_nombre
+		,U.gls_ape_paterno
+		,U.gls_ape_materno
+		,U.correo
+		,U.anexo
+		,U.fec_nacimiento
+		,U.gls_usuario
+		,U.idcargo
+		,U.idarea
+		,U.idempresa
+		,U.idcategoria
+		,U.estado
+		,C.gls_Cargo
+		,A.gls_area
+		,E.gls_empresa
+	from Perfil.Usuario U
+	left join Perfil.Cargo C on C.id = U.idcargo
+	left join Perfil.Area A on A.id = U.idarea
+	left join Perfil.Empresa E on E.id = U.idempresa
+	where U.gls_usuario = @gls_usuario;
 end
 GO
 

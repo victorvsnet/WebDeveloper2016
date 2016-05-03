@@ -18,7 +18,7 @@ namespace Web.UI.Controllers
         {
             BLUsuario UsuarioLogic = new BLUsuario();
             UsuarioViewModels modelUser = new UsuarioViewModels();
-            BEUsuario Usuario = UsuarioLogic.ObtenerUsuario(User.Identity.GetUserId());
+            BEUsuario Usuario = UsuarioLogic.ObtenerUsuario(User.Identity.GetUserName());
 
             modelUser.nom_usuario = Usuario.gls_usuario;
             modelUser.nombre = Usuario.gls_nombre;

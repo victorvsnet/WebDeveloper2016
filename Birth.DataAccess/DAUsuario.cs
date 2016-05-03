@@ -15,9 +15,9 @@ namespace Birth.DataAccess
         /// <summary>
         /// Obtiene usuarios de la tabla Perfil.Usuario
         /// </summary>
-        /// <param name="guid_user">llave clave GUID</param>
+        /// <param name="nombreUsuario">llave clave GUID</param>
         /// <returns>usuario correspondiente</returns>
-        public BEUsuario ObtenerUsuario(string guid_user)
+        public BEUsuario ObtenerUsuario(string nombreUsuario)
         {
             BEUsuario item = new BEUsuario();
 
@@ -26,7 +26,7 @@ namespace Birth.DataAccess
                 using (SqlCommand ocmd = new SqlCommand("Perfil.SP_Usuario_Obtener", ocn))
                 {
                     ocmd.CommandType = CommandType.StoredProcedure;
-                    ocmd.Parameters.Add("@guid_user", SqlDbType.VarChar).Value = guid_user;
+                    ocmd.Parameters.Add("@gls_usuario", SqlDbType.VarChar).Value = nombreUsuario;
 
                     ocn.Open();
 

@@ -13,11 +13,11 @@ namespace Birth.BusinessLogic
         /// <summary>
         /// Obtiene usuarios de la tabla Perfil.Usuario
         /// </summary>
-        /// <param name="guid_user">llave clave GUID</param>
+        /// <param name="nombreUsuario">llave clave GUID</param>
         /// <returns>usuario correspondiente</returns>
-        public BEUsuario ObtenerUsuario(string guid_user)
+        public BEUsuario ObtenerUsuario(string nombreUsuario)
         {
-            return new DAUsuario().ObtenerUsuario(guid_user);
+            return new DAUsuario().ObtenerUsuario(nombreUsuario);
         }
 
         /// <summary>
