@@ -73,6 +73,15 @@ namespace Birth.DataAccess
 
                             if (!Convert.IsDBNull(oReader["estado"]))
                                 item.estado = oReader["estado"].ToString();
+
+                            if (!Convert.IsDBNull(oReader["gls_Cargo"]))
+                                item.gls_Cargo = oReader["gls_Cargo"].ToString();
+
+                            if (!Convert.IsDBNull(oReader["gls_area"]))
+                                item.gls_area = oReader["gls_area"].ToString();
+
+                            if (!Convert.IsDBNull(oReader["gls_empresa"]))
+                                item.gls_empresa = oReader["gls_empresa"].ToString();
                         }
                     }
                 }

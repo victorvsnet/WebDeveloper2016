@@ -23,5 +23,6 @@ namespace Birth.BusinessEntity
 
         public string gls_Cargo { get; set; }
         public string gls_area { get; set; }
+        public string gls_empresa { get; set; }
     }
 }
