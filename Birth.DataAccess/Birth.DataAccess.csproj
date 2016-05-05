@@ -45,6 +45,7 @@
     <Compile Include="DACargo.cs" />
     <Compile Include="DACategoriaUsuario.cs" />
     <Compile Include="DAEmpresa.cs" />
+    <Compile Include="DAOrganizacion.cs" />
     <Compile Include="DAUsuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Util.cs" />

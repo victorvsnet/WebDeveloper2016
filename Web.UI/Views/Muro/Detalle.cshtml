@@ -1,4 +1,4 @@
-﻿
+﻿@model Web.UI.Models.MuroViewModels
 @{
     ViewBag.Title = "Muro";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -13,21 +13,21 @@
         <div class="box box-primary">
             <div class="box-body box-profile">
                 <img class="profile-user-img img-responsive img-circle" src="~/Content/Estilos/dist/img/per11-128x128.png" alt="User profile picture">
-                <h3 class="profile-username text-center">Victor Yucra</h3>
-                <p class="text-muted text-center">Analista Funcional</p>
+                <h3 class="profile-username text-center">@Model.nombre @Model.ape_paterno</h3>
+                <p class="text-muted text-center">@Model.gls_Cargo</p>
 
                 <ul class="list-group list-group-unbordered">
                     <li class="list-group-item">
-                        <i class="fa fa-coffee margin-r-5"></i><b>Estado</b> <a class="pull-right">Trabajar para Viajar!</a>
+                        <i class="fa fa-coffee margin-r-5"></i><b>Estado</b> <a class="pull-right">Celebrando el cumpleaños!</a>
                     </li>
                     <li class="list-group-item">
-                        <i class="fa fa-phone-square margin-r-5"></i><b>Anexo</b> <a class="pull-right">4037</a>
+                        <i class="fa fa-phone-square margin-r-5"></i><b>Anexo</b> <a class="pull-right">@Model.anexo</a>
                     </li>
                     <li class="list-group-item">
-                        <i class="fa fa-comment margin-r-5"></i><b>Mensajes</b> <a class="pull-right">14</a>
+                        <i class="fa fa-comment margin-r-5"></i><b>Mensajes</b> <a class="pull-right">@Model.total_mensajes</a>
                     </li>
                     <li class="list-group-item">
-                        <i class="fa fa-birthday-cake margin-r-5"></i><b>Cumplea&ntilde;os</b> <a class="pull-right">15 Agosto</a>
+                        <i class="fa fa-birthday-cake margin-r-5"></i><b>Cumplea&ntilde;os</b> <a class="pull-right">@Model.FecNacimiento</a>
                     </li>
                 </ul>
             </div><!-- /.box-body -->
@@ -39,12 +39,18 @@
             </div><!-- /.box-header -->
             <div class="box-body">
                 <ul class="list-group list-group-unbordered">
-                    <li class="list-group-item">
+                    @foreach (var item in Model.Organizadores)
+                    {
+                        <li class="list-group-item">
+                            @Html.Partial("_PartialOrganizadores", item)
+                        </li>
+                    }
+                    @*<li class="list-group-item">
                         <i class="fa fa-users margin-r-5"></i><b>Jose Carrillo</b> <a class="pull-right">Soporte Tecnico</a>
                     </li>
                     <li class="list-group-item">
                         <i class="fa fa-users margin-r-5"></i><b>Julio Lino</b> <a class="pull-right">Desarrollo</a>
-                    </li>
+                    </li>*@
                 </ul>
 
                 <strong><i class="fa fa-file-text-o margin-r-5"></i> Comentario</strong>

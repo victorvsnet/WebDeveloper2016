@@ -1284,6 +1284,7 @@
     <Content Include="Views\Usuario\Register.cshtml" />
     <Content Include="Views\Home\_PartialCumple.cshtml" />
     <Content Include="Views\Muro\Detalle.cshtml" />
+    <Content Include="Views\Muro\_PartialOrganizadores.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

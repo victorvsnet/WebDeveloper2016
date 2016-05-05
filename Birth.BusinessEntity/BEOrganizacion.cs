@@ -11,5 +11,8 @@ namespace Birth.BusinessEntity
         public int idusuario { get; set; }
         public int idusuariorganiza { get; set; }
         public int anio { get; set; }
+        public string gls_Cumpleaniero { get; set; }
+        public string gls_organizador { get; set; }
+        public string gls_Cargo { get; set; }
     }
 }

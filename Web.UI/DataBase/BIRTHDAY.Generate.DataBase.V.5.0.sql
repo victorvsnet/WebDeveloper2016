@@ -195,8 +195,9 @@ Descripcion: Obtener lista de cumpleanios por ANIO
 Creado Por: Victor Yucra
 Fecha Creacion: 11/03/2016
 ********************************************************************************/
-create procedure Muro.SP_Cumpleanios_Select
-	@anio int
+ALTER procedure Muro.SP_Cumpleanios_Select
+	 @anio int
+	,@idUsuario int
 as
 begin
 
@@ -211,10 +212,10 @@ begin
 	from Muro.Organizacion mo
 	left join Perfil.Usuario pu on pu.id = mo.idusuario
 	left join Perfil.Usuario pd on pd.id = mo.idusuariorganiza
-	where anio = @anio
+	where mo.anio = @anio 
+		and mo.idusuario = @idUsuario
 
 end
-GO
 
 
 /********************************************************************************
@@ -404,3 +405,54 @@ begin
 	left join Perfil.Area a on a.id = u.idarea
 end
 GO
+
+
+
+
+
+
+use BIRTHDATA
+go
+
+exec Muro.SP_Cumpleanios_Select 2016,20
+select * from Muro.Organizacion
+select * from Perfil.Usuario
+
+update Perfil.Usuario
+set fec_nacimiento = '19870815'
+where id = 1
+
+
+exec Muro.SP_Cumpleanios_Select 2016,20
+
+--Victor Yucra
+insert into Muro.Organizacion values(1,11,2016,1,'VYUCRA',getdate(),null,null)
+insert into Muro.Organizacion values(1,20,2016,1,'VYUCRA',getdate(),null,null)
+
+--Julio Lino
+insert into Muro.Organizacion values(9,1,2016,1,'VYUCRA',getdate(),null,null)
+insert into Muro.Organizacion values(9,18,2016,1,'VYUCRA',getdate(),null,null)
+
+--Victor Polo
+insert into Muro.Organizacion values(11,1,2016,1,'VYUCRA',getdate(),null,null)
+insert into Muro.Organizacion values(11,18,2016,1,'VYUCRA',getdate(),null,null)
+
+--Marco	Liendo
+insert into Muro.Organizacion values(14,1,2016,1,'VYUCRA',getdate(),null,null)
+insert into Muro.Organizacion values(14,18,2016,1,'VYUCRA',getdate(),null,null)
+
+--Christian	Cornelio
+insert into Muro.Organizacion values(16,9,2016,1,'VYUCRA',getdate(),null,null)
+insert into Muro.Organizacion values(16,14,2016,1,'VYUCRA',getdate(),null,null)
+
+--Diego	Jaimes
+insert into Muro.Organizacion values(19,16,2016,1,'VYUCRA',getdate(),null,null)
+insert into Muro.Organizacion values(19,11,2016,1,'VYUCRA',getdate(),null,null)
+
+--Andres Chang
+insert into Muro.Organizacion values(18,14,2016,1,'VYUCRA',getdate(),null,null)
+insert into Muro.Organizacion values(18,20,2016,1,'VYUCRA',getdate(),null,null)
+
+--Enrique Yucra
+insert into Muro.Organizacion values(20,9,2016,1,'VYUCRA',getdate(),null,null)
+insert into Muro.Organizacion values(20,19,2016,1,'VYUCRA',getdate(),null,null)

@@ -14,9 +14,9 @@ namespace Web.UI.Models
         public string ape_paterno { get; set; }
         public string gls_estado_perfil { get; set; }
         public string gls_Cargo { get; set; }
-        public int anexo { get; set; }
+        public string anexo { get; set; }
         public int total_mensajes { get; set; }
-        public DateTime FecNacimiento { get; set; }
+        public string FecNacimiento { get; set; }
         public List<Organizador> Organizadores { get; set; }
         public List<Mensaje> Mensajes { get; set; }
     }

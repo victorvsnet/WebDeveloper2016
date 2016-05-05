@@ -44,6 +44,7 @@
     <Compile Include="BLCargo.cs" />
     <Compile Include="BLCategoriaUsuario.cs" />
     <Compile Include="BLEmpresa.cs" />
+    <Compile Include="BLOrganizacion.cs" />
     <Compile Include="BLUsuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
